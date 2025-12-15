@@ -1,5 +1,5 @@
 <!-- # JobFlow AI -->
-<h1 align="center"> JobFlow AI: Tailored Job Application Assistant</h1>
+<h1 align="center"> JobFlow AI: Tailored Job Studio</h1>
 
 <div align="center">
 
