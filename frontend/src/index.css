@@ -1,0 +1,136 @@
+@import '@fontsource-variable/space-grotesk';
+
+:root {
+  font-family: 'Space Grotesk Variable', 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #0f172a;
+  background-color: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --bg-body: #f4f7fb;
+  --bg-card: #ffffff;
+  --bg-muted: #eff2fb;
+  --bg-sidebar: #050e2d;
+  --accent-primary: #6366f1;
+  --accent-secondary: #80ffd3;
+  --text-primary: #0b1424;
+  --text-muted: #5b6172;
+  --border-color: rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme='dark'] {
+  --bg-body: #030712;
+  --bg-card: #0b1220;
+  --bg-muted: #121b2f;
+  --bg-sidebar: #010208;
+  --accent-primary: #9ba6ff;
+  --accent-secondary: #7df5d5;
+  --text-primary: #f8fbff;
+  --text-muted: #94a3b8;
+  --border-color: rgba(148, 163, 184, 0.2);
+  --shadow-soft: 0 20px 45px rgba(0, 0, 0, 0.55);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-body);
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.pill {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #7b5aff 0%, #36e1c6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accent-button {
+  background: linear-gradient(135deg, #7065ff 0%, #56e0d6 100%);
+  border: none;
+  color: white;
+  padding: 0.85rem 1.4rem;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(87, 99, 255, 0.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.accent-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 35px rgba(87, 99, 255, 0.35);
+}
+
+.input-shell {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-muted);
+}
+
+.input-shell input,
+.input-shell select {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
