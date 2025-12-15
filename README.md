@@ -28,6 +28,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 - **Ollama** running locally with an available model (defaults to `qwen3:4b` – update `OLLAMA_MODEL` if needed)
 - **Google Cloud project** with OAuth credentials (Web type) and Drive API enabled
 - **RapidAPI JSearch key** (or another provider wired into `JOB_SEARCH_PROVIDER`)
+- **JWT secret** – generate a 32–64 char random string (hex/base64) for `JWT_SECRET_KEY`
 
 ## Quick Start
 
@@ -51,7 +52,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 
    ```dotenv
    DATABASE_URL=postgresql+psycopg://username:password@localhost:5432/job_assistant
-   JWT_SECRET_KEY=change-me(random_34/64_hex_characters)
+   JWT_SECRET_KEY=change-me
    OLLAMA_HOST=http://localhost:11434
    OLLAMA_MODEL=qwen3:4b
    JOB_SEARCH_PROVIDER=jsearch
@@ -63,7 +64,6 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
    ```
 
    - Set authorized JavaScript origins / redirect URIs in Google Cloud to match `localhost:5173` and the redirect above.
-   - For other job APIs, add a new fetch helper in `app/services/job_search.py` and set `JOB_SEARCH_PROVIDER` accordingly.
 
 3. **Run services**
 
@@ -92,8 +92,10 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 
 ## Notes & Tips
 
-- **Screenshot**: Update `docs/home-hero.png` with a current capture of the home page to keep the README fresh.
-- **Alternate job APIs**: Add a new fetch helper similar to `_fetch_from_jsearch` and switch `JOB_SEARCH_PROVIDER` in `.env`.
-- **Security**: Never commit `.env` or Google credentials. Use Git ignored `.env` and secrets managers in production.
+- **Trying new job APIs**: Add a fetch helper (see `_fetch_from_jsearch`) and switch `JOB_SEARCH_PROVIDER` / API key in `.env`.
+- **JWT secret hygiene**: regenerate periodically and avoid reusing across environments.
+- **Google OAuth**: when running locally, ensure your Google project has `http://localhost:5173` and the callback URL in the allowed list or auth will silently fail.
+- **First-time scoring**: keep Ollama running before hitting \"Score job\" to avoid timeouts.
+- **Production deployment**: move credentials to a secret manager and use HTTPS for both backend + frontend origins.
 
-Happy shipping! 🎯
+Happy job hunting! 🎯
