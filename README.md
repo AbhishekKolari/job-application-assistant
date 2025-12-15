@@ -9,7 +9,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 
 </div>
 
-## Highlights
+## ✨ Highlights
 
 - **On-demand scoring** – Jobs are only scored when you click "Score job", keeping LLM usage predictable.
 - **Tailoring workspace** – Side-by-side editors generate resume + cover letter drafts seeded from your instructions.
@@ -17,7 +17,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 - **Google Drive export** – Push tailored docs directly to a connected Drive using the user’s OAuth tokens.
 - **Manual job sourcing** – Integrates with RapidAPI’s JSearch (or fallback sample data) with cached scores across views.
 
-## Tech Stack
+## 🧱 Tech Stack
 
 | Layer      | Tools |
 |------------|-------|
@@ -26,7 +26,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 | AI layer   | Ollama (LLM inference through LangChain) |
 | Auth / Drive | Google OAuth2, Drive API |
 
-## Prerequisites
+## 🔧 Prerequisites
 
 - **Python 3.11+** and **Node 18+**
 - **PostgreSQL** database (local or cloud)
@@ -35,7 +35,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 - **RapidAPI JSearch key** (or another provider wired into `JOB_SEARCH_PROVIDER`)
 - **JWT secret** – generate a 32–64 char random string (hex/base64) for `JWT_SECRET_KEY`
 
-## Quick Start
+## 🚀 Quick Start
 
 1. **Clone & install**
 
@@ -86,7 +86,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
    - Visit the app, sign in with Google, and grant Drive scope so tailored docs can be saved/exported.
    - Ensure Ollama is running: `ollama pull qwen3:4b` (or any compatible model) before scoring/tailoring.
 
-## Workflow Overview
+## 🔁 Workflow Overview
 
 1. **Upload resumes** – Drag/drop PDFs on the home page; metadata and parsed text are stored securely.
 2. **Define a search** – Select city + country, work mode, experience level, and optional keyword filters.
@@ -95,7 +95,7 @@ JobFlow AI is a full-stack assistant that streamlines every step of a modern job
 5. **Tailor & export** – Generate resume / cover-letter drafts, iterate, and push final docs to Google Drive.
 6. **Track progress** – Update application status, watch weekly activity charts, and prune stale roles.
 
-## Notes & Tips
+## 💡 Notes & Tips
 
 - **Trying new job APIs**: Add a fetch helper (see `_fetch_from_jsearch`) and switch `JOB_SEARCH_PROVIDER` / API key in `.env`.
 - **JWT secret hygiene**: regenerate periodically and avoid reusing across environments.
