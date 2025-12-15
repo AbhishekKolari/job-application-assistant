@@ -3,7 +3,7 @@
 
 <div align="center">
 
-JobFlow AI is a full-stack assistant that streamlines every step of a modern job hunt: upload one resume, search live roles, score them with LLMs on demand, tailor documents, and track progress with a live dashboard. The app is built for power users who want human-grade polish with automatic guardrails around expensive AI calls.
+JobFlow AI is a local full-stack assistant that streamlines every step of a modern job hunt: upload one resume, search live roles, score them with LLMs on demand, tailor documents, and track progress with a live dashboard. The app is built for power users who want human-grade polish with automatic guardrails around expensive AI calls.
 
 ![JobFlow AI screenshot](image.png)
 
